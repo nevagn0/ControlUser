@@ -1,0 +1,14 @@
+﻿services:
+  database:
+    image: postgres:17
+    environment:
+      - POSTGRES_USER=developer
+      - POSTGRES_DB=db
+      - POSTGRES_PASSWORD=goida
+    ports:
+      - "5435:5432"
+    volumes:
+      - database.volume:/var/lib/postgresql/data
+
+volumes:
+  database.volume:
