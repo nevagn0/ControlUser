@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "McjXrhGdc1k=",
+  "dgSpecHash": "VX2TtKOsXhA=",
   "success": true,
   "projectFilePath": "D:\\ControlSystem\\ControlSystem\\ControlSystem.csproj",
   "expectedPackageFiles": [
@@ -44,6 +44,7 @@
     "C:\\Users\\shind\\.nuget\\packages\\mono.texttemplating\\3.0.0-preview-0052-g5d0f76c785\\mono.texttemplating.3.0.0-preview-0052-g5d0f76c785.nupkg.sha512",
     "C:\\Users\\shind\\.nuget\\packages\\npgsql\\8.0.4\\npgsql.8.0.4.nupkg.sha512",
     "C:\\Users\\shind\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\9.0.0-rc.1\\npgsql.entityframeworkcore.postgresql.9.0.0-rc.1.nupkg.sha512",
+    "C:\\Users\\shind\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\9.0.0\\swashbuckle.aspnetcore.swaggerui.9.0.0.nupkg.sha512",
     "C:\\Users\\shind\\.nuget\\packages\\system.codedom\\6.0.0\\system.codedom.6.0.0.nupkg.sha512",
     "C:\\Users\\shind\\.nuget\\packages\\system.collections.immutable\\7.0.0\\system.collections.immutable.7.0.0.nupkg.sha512",
     "C:\\Users\\shind\\.nuget\\packages\\system.composition\\7.0.0\\system.composition.7.0.0.nupkg.sha512",
