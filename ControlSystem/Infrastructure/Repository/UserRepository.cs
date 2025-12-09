@@ -6,7 +6,6 @@ namespace ControlSystem.Infrastructure.Repository;
 
 public class UserRepository : IUserRepository
 {
-    private readonly ILogger<UserRepository> _logger;
     private readonly ControlSystemDB _controlSystemDB;
 
     public UserRepository(ControlSystemDB controlSystemDB, ILogger<UserRepository> logger)

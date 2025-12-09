@@ -39,20 +39,19 @@ public class UserController : ControllerBase
         try
         {
             var result = await _authService.LoginAsync(request);
-           
+            
             HttpContext.Response.Cookies.Append("access_token", result.Token, new CookieOptions
             {
                 Expires = result.Expires,
-                HttpOnly = false,
-                IsEssential = true,
+                HttpOnly = true,
                 Secure = true,
                 SameSite = SameSiteMode.None
             });
-           
+            
             return Ok(new
             {
                 message = "Успешный вход",
-                token = result.Token,
+                token = result.Token, 
                 user = result.User
             });
         }

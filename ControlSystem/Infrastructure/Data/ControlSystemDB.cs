@@ -45,6 +45,10 @@ public class ControlSystemDB : DbContext
             entity.Property(e => e.DateUpdate)
                 .HasColumnName("date_update").
                 HasDefaultValueSql("now()");
+            
+            
+            
         });
+        
     }
 }
