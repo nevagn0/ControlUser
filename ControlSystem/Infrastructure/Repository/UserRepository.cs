@@ -1,8 +1,10 @@
+using ControlSystem.Domain.Repository;
 using ControlSystem.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace ControlSystem.Infrastructure.Repository;
 
-public class UserRepository
+public class UserRepository : IUserRepository
 {
     private readonly ILogger<UserRepository> _logger;
     private readonly ControlSystemDB _controlSystemDB;
@@ -22,5 +24,15 @@ public class UserRepository
     { 
         _controlSystemDB.Users.Update(user);
         await _controlSystemDB.SaveChangesAsync();
+    }
+
+    public async Task<User?> GetByEmailAsync(string email)
+    {
+        return await _controlSystemDB.Users.FirstOrDefaultAsync(u => u.Email == email);
+    }
+
+    public async Task<User?> GetByIdAsync(Guid id)
+    {
+        return await _controlSystemDB.Users.FirstOrDefaultAsync(u => u.Id == id);
     }
 }

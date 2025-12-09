@@ -17,6 +17,7 @@ public class UserServices
         {
             Id = Guid.NewGuid(),
             Name = dto.Name,
+            Email = dto.Email,
             HashPassword = HashPassword(dto.Password), 
             Role = dto.Role,
             DateCreate = DateTime.UtcNow,
@@ -29,6 +30,7 @@ public class UserServices
         {
             Id = user.Id,
             Name = user.Name,
+            Email = user.Email,
             Role = user.Role,
             DateCreate = user.DateCreate,
             DateUpdate = user.DateUpdate

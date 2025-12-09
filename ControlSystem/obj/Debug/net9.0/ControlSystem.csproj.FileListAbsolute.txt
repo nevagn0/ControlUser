@@ -127,3 +127,7 @@ D:\ControlSystem\ControlSystem\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Worksp
 D:\ControlSystem\ControlSystem\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 D:\ControlSystem\ControlSystem\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 D:\ControlSystem\ControlSystem\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\ControlSystem\ControlSystem\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\ControlSystem\ControlSystem\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\ControlSystem\ControlSystem\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\ControlSystem\ControlSystem\obj\Debug\net9.0\ControlSystem.sourcelink.json
