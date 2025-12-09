@@ -35,4 +35,9 @@ public class UserRepository : IUserRepository
     {
         return await _controlSystemDB.Users.FirstOrDefaultAsync(u => u.Id == id);
     }
+
+    public async Task<IEnumerable<User>> GetAllAsync()
+    {
+        return await _controlSystemDB.Users.ToListAsync();
+    }
 }

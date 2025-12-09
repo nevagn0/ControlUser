@@ -1,6 +1,7 @@
 using ControkSystem.Application.Services;
-using ControlSystem.Application.Services;
+using ControlSystem.Domain.Repository;
 using ControlSystem.Infrastructure.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 namespace ControlSystem.API.Controller;
 using ControlSystem.Application.Dto;
@@ -9,12 +10,13 @@ using ControlSystem.Application.Dto;
 [Route("api/[controller]")]
 public class UserController : ControllerBase
 {
-    private readonly UserServices _services;
-    private readonly IAuthService _authService;
 
-    public UserController(UserServices services,  IAuthService authService)
+    private readonly IAuthService _authService;
+    private readonly IUserRepository _userRepository;
+
+    public UserController( IAuthService authService,  IUserRepository userRepository)
     {
-        _services = services;
+        _userRepository =  userRepository;
         _authService = authService;
     }
 
@@ -58,5 +60,37 @@ public class UserController : ControllerBase
         {
             return Unauthorized(new { error = ex.Message });
         }
+    }
+    [HttpPost("logout")]
+    public IActionResult Logout()
+    {
+        try
+        {
+            var cookieOptions = new CookieOptions
+            {
+                HttpOnly = false,
+                Secure = true,
+                SameSite = SameSiteMode.None,
+                Path = "/",
+                Expires = DateTime.UtcNow.AddYears(-1)
+            };
+
+            Response.Cookies.Append("access_token", "", cookieOptions);
+                
+            return Ok(new { 
+                message = "Успешный выход"
+            });
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(new { error = ex.Message });
+        }
+    }
+    [HttpGet("GetAllUsers")]
+    [Authorize(Policy = "GetAllUsers")]
+    public async Task<OkObjectResult> GetALlUsers()
+    {
+            var user = await _userRepository.GetAllAsync();
+            return Ok(user);
     }
 }

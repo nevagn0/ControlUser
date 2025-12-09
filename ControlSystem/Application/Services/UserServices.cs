@@ -1,6 +1,9 @@
 using ControlSystem.Application.Dto;
 using ControlSystem.Domain.Repository;
 using ControlSystem.Infrastructure.Repository;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+
 namespace ControlSystem.Application.Services;
 
 public class UserServices
@@ -10,35 +13,19 @@ public class UserServices
     {
         _userRepository = userRepository;
     }
-
-    public async Task<UserDto> CreateUser(CreateUserDto dto)
+    
+    public async Task<IEnumerable<UserDto>> GetAllUsers()
     {
-        var user = new User
-        {
-            Id = Guid.NewGuid(),
-            Name = dto.Name,
-            Email = dto.Email,
-            HashPassword = HashPassword(dto.Password), 
-            Role = dto.Role,
-            DateCreate = DateTime.UtcNow,
-            DateUpdate = DateTime.UtcNow 
-        };
-        
-        await _userRepository.CreateUser(user);
-        
-        return new UserDto
+        var user = await _userRepository.GetAllAsync();
+        return user.Select(user => new UserDto
         {
             Id = user.Id,
-            Name = user.Name,
             Email = user.Email,
             Role = user.Role,
+            Name = user.Name,
             DateCreate = user.DateCreate,
             DateUpdate = user.DateUpdate
-        };
-    }
-    
-    private string HashPassword(string password)
-    {
-        return BCrypt.Net.BCrypt.HashPassword(password);
+        });
+        
     }
 }
