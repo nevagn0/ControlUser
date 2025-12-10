@@ -9,6 +9,19 @@
       - "5435:5432"
     volumes:
       - database.volume:/var/lib/postgresql/data
-
+  
+  user.service:
+    image: user.service:latest
+    build:
+      context: .
+      dockerfile: ControlSystem/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=5001
+      - ConnectionStrings__DefaultConnection=Host=database;Port=5432;Database=db;Username=developer;Password=goida
+    ports:
+      - "5001:5001"
+    depends_on:
+      - database
 volumes:
   database.volume:

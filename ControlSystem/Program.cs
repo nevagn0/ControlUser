@@ -86,7 +86,6 @@ builder.Services.AddCors(options =>
 });
 var app = builder.Build();
 
-app.Urls.Add("http://localhost:5001");
 app.UseCors("AllowGateway");
 if (app.Environment.IsDevelopment())
 {
@@ -98,6 +97,12 @@ if (app.Environment.IsDevelopment())
         c.DocumentTitle = "User Service Documentation";
     });
 }
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<ControlSystemDB>();
+    context.Database.Migrate();
+}
+
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();

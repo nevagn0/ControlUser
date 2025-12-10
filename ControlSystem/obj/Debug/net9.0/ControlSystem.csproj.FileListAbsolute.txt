@@ -131,3 +131,10 @@ D:\ControlSystem\ControlSystem\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.d
 D:\ControlSystem\ControlSystem\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\ControlSystem\ControlSystem\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\ControlSystem\ControlSystem\obj\Debug\net9.0\ControlSystem.sourcelink.json
+D:\ControlSystem\ControlSystem\bin\Debug\net9.0\Castle.Core.dll
+D:\ControlSystem\ControlSystem\bin\Debug\net9.0\FluentValidation.dll
+D:\ControlSystem\ControlSystem\bin\Debug\net9.0\Moq.dll
+D:\ControlSystem\ControlSystem\bin\Debug\net9.0\xunit.assert.dll
+D:\ControlSystem\ControlSystem\bin\Debug\net9.0\Xunit.DependencyInjection.dll
+D:\ControlSystem\ControlSystem\bin\Debug\net9.0\xunit.v3.common.dll
+D:\ControlSystem\ControlSystem\bin\Debug\net9.0\xunit.v3.core.dll
